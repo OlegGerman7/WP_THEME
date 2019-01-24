@@ -7,7 +7,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
             <?php while ( have_posts() ) : the_post();
                 if( is_singular( array('dogs_profile' , 'cats_profile') ) ){
-                    get_template_part( 'template-parts/post/animals', get_post_format() );
+                    get_template_part( 'template-parts/post/animals');
                 } else { get_template_part( 'template-parts/post/content', get_post_format() ); }
 
                 // If comments are open or we have at least one comment, load up the comment template.
