@@ -1,7 +1,7 @@
 <?php
-function true_enqueue_styles() {
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style') );
+    function true_enqueue_styles() {
+        wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style') );
 }
  
 add_action( 'wp_enqueue_scripts', 'true_enqueue_styles' );
@@ -9,15 +9,15 @@ add_action( 'wp_enqueue_scripts', 'true_enqueue_styles' );
 function get_posts_count(){
     global $wpdb;
     return $post_count = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts 
-    WHERE post_type = 'post' and post_status = 'publish';" );
+                          WHERE post_type = 'post' and post_status = 'publish';" );
 }
 
 add_action('init', 'Dogs_Profile');
 function Dogs_Profile(){
     register_post_type('Dogs_Profile', array(
         'labels'             => array(
-            'name'               => 'Dogs', // Основное название типа записи
-            'singular_name'      => 'Dog', // отдельное название записи типа Dog
+            'name'               => 'Dogs',
+            'singular_name'      => 'Dog',
             'add_new'            => 'Add new',
             'add_new_item'       => 'Add new dog',
             'edit_item'          => 'Edit dog',
@@ -47,8 +47,8 @@ add_action('init', 'Cats_Profile');
 function Cats_Profile(){
     register_post_type('Cats_Profile', array(
         'labels'             => array(
-            'name'               => 'Cats', // Основное название типа записи
-            'singular_name'      => 'Cat', // отдельное название записи типа Cat
+            'name'               => 'Cats',
+            'singular_name'      => 'Cat',
             'add_new'            => 'Add new',
             'add_new_item'       => 'Add new cat',
             'edit_item'          => 'Edit cat',
@@ -96,4 +96,3 @@ function create_taxonomy(){
         'rewrite'               => true,
     ) );
 }
-?>
