@@ -22,9 +22,7 @@
 			?>
 		</div><!-- .wrap -->
 
-		<?php 
-			echo get_posts_count();
-		?>
+		<?php echo get_posts_count(); ?>
 	</footer><!-- #colophon -->
 	</div><!-- .site-content-contain -->
 </div><!-- #page -->
