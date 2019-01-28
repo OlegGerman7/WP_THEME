@@ -8,7 +8,7 @@ add_action( 'wp_enqueue_scripts', 'true_enqueue_styles' );
 
 function get_posts_count(){
     global $wpdb;
-    return $post_count = $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts 
+    return $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts 
                           WHERE post_type = 'post' and post_status = 'publish';" );
 }
 
