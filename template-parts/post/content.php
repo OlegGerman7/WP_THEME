@@ -8,6 +8,11 @@
            <a href="<?php the_permalink(); ?>"> <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
+    <?php if ( is_front_page() ) {
+        echo "<br>"; ?>
+        <p><?php the_author_posts_link(); ?>
+    <?php } ?>
+
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
@@ -25,12 +30,6 @@
 		) );
 
 		the_tags();
-
-		if ( is_front_page() ) {
-            echo "<br>";
-            the_author_posts_link();
-        }
-
 		wp_link_pages( array(
 			'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
 			'after'       => '</div>',
