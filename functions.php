@@ -97,3 +97,13 @@ function create_taxonomy(){
         'rewrite'               => true,
     ) );
 }
+
+register_sidebar( array(
+    'name'          => __( 'Data Sidebar', 'twentyseventeen' ),
+    'id'            => 'sidebar-4',
+    'description'   => __( 'Add widgets here to appear in your sidebar on data pages.', 'twentyseventeen' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+) );
