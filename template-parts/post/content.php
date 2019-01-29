@@ -26,6 +26,11 @@
 
 		the_tags();
 
+		if ( is_front_page() ) {
+            echo "<br>";
+            the_author_posts_link();
+        }
+
 		wp_link_pages( array(
 			'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
 			'after'       => '</div>',
