@@ -1,6 +1,10 @@
 <?php
+/**
+ * The template for displaying archive pages
+ */
+get_header();
 
-get_header(); ?>
+?>
 
     <div class="wrap">
 
@@ -22,7 +26,7 @@ get_header(); ?>
                     /* Start the Loop */
                     while ( have_posts() ) : the_post();
 
-                        get_template_part( 'template-parts/post/animals' );
+                        get_template_part( 'template-parts/post/content', get_post_format() );
 
                     endwhile;
 
@@ -40,7 +44,7 @@ get_header(); ?>
 
             </main><!-- #main -->
         </div><!-- #primary -->
-        <?php get_sidebar(); ?>
+        <?php get_sidebar('date'); ?>
     </div><!-- .wrap -->
 
 <?php get_footer();
