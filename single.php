@@ -1,6 +1,6 @@
 <?php
 
-get_header(); ?>
+get_header('custom'); ?>
 
 <div class="wrap">
 	<div id="primary" class="content-area">
