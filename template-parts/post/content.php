@@ -21,9 +21,16 @@
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
-	<div class="entry-content">
+    <?php $categories = get_the_category();
+        foreach( $categories as $category ){
+            $cat = $category->cat_name;
+            if( $cat == 'Cats' ){
+                break;
+            }
+        } ?>
+
+	<div class="entry-content" <?php if( $cat == 'Cats' ) { echo "id = 'cats'"; } ?> >
 		<?php
-		/* translators: %s: Name of current post */
 		the_content( sprintf(
 			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
 			get_the_title()
@@ -40,9 +47,9 @@
 	</div><!-- .entry-content -->
 
 	<?php
-	if ( is_single() ) {
-		twentyseventeen_entry_footer();
-	}
+        if ( is_single() ) {
+            twentyseventeen_entry_footer();
+        }
 	?>
 
 </article><!-- #post-## -->
