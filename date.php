@@ -44,7 +44,12 @@ get_header();
 
             </main><!-- #main -->
         </div><!-- #primary -->
-        <?php get_sidebar(); ?>
+        <?php if ( ! is_active_sidebar( 'sidebar-4' ) ) {
+            return;
+        } ?>
+        <aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Data Sidebar', 'twentyseventeen' ); ?>">
+            <?php dynamic_sidebar( 'sidebar-4' ); ?>
+        </aside>
     </div><!-- .wrap -->
 
 <?php get_footer();
