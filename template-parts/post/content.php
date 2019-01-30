@@ -6,12 +6,13 @@
 	?>
 	<header class="entry-header">
         <a href="<?php the_permalink(); ?>"> <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></a>
+        <?php if ( is_front_page() ) { ?>
+            <?php echo "by ";
+                the_author_posts_link();
+            } ?>
 	</header><!-- .entry-header -->
 
-    <?php if ( is_front_page() ) {
-        echo "<br>"; ?>
-        <p><?php the_author_posts_link(); ?>
-    <?php } ?>
+
 
 	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 		<div class="post-thumbnail">
