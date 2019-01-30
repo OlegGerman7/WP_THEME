@@ -21,15 +21,8 @@
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
-    <?php $categories = get_the_category();
-        foreach( $categories as $category ){
-            $cat = $category->cat_name;
-            if( $cat == 'Cats' ){
-                break;
-            }
-        } ?>
+	<div class="entry-content <?php if( in_category('Cats') ) { echo " cats"; } ?> " >
 
-	<div class="entry-content" <?php if( $cat == 'Cats' ) { echo "id = 'cats'"; } ?> >
 		<?php
 		the_content( sprintf(
 			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
