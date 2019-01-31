@@ -17,8 +17,11 @@
 
     <div class="entry-content">
         <?php
-
-        the_excerpt();
+        /* translators: %s: Name of current post */
+        the_content( sprintf(
+            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+            get_the_title()
+        ) );
 
         the_tags(); ?>
          <p><?php the_time('j, M Y'); ?></p>
