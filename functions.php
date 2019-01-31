@@ -107,3 +107,13 @@ register_sidebar( array(
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
 ) );
+
+add_filter( 'excerpt_length', function(){
+    return 29;
+} );
+
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+function new_excerpt_more( $more ){
+    global $post;
+    return '<a href="'. get_permalink($post) . '"> ...</a>';
+}

@@ -4,9 +4,9 @@
         echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
     endif;
     ?>
-        <header class="entry-header">
-            <a href="<?php the_permalink(); ?>"> <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?> </a>
-        </header>
+    <header class="entry-header">
+        <a href="<?php the_permalink(); ?>"> <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?> </a>
+    </header>
     <?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
@@ -17,13 +17,11 @@
 
     <div class="entry-content">
         <?php
-
         the_excerpt();
-
         the_tags(); ?>
-         <p><?php the_time('j, M Y'); ?></p>
+        <p><?php the_time('j, M Y'); ?></p>
 
-       <?php wp_link_pages( array(
+        <?php wp_link_pages( array(
             'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
             'after'       => '</div>',
             'link_before' => '<span class="page-number">',
