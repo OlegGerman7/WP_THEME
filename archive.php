@@ -8,6 +8,10 @@ get_header();
 
     <div class="wrap">
 
+        <?php echo 'Custom view category : ' . get_query_var('category_name' ) . '<br>'; ?>
+        <?php echo 'Custom view order : ' . get_query_var('order' ) . '<br>'; ?>
+        <?php echo 'Custom view fields : ' . get_query_var('fields' ) . '<br>'; ?>
+
         <?php if ( have_posts() ) : ?>
             <header class="page-header">
                 <?php

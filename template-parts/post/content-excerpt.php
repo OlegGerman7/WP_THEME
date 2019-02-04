@@ -17,7 +17,7 @@
 
     <div class="entry-content">
         <?php
-        the_excerpt();
+        the_content();
         the_tags(); ?>
         <p><?php the_time('j, M Y'); ?></p>
 
