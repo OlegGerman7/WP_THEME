@@ -11,6 +11,7 @@ get_header();
         <?php echo 'Custom view category : ' . get_query_var('category_name' ) . '<br>'; ?>
         <?php echo 'Custom view order : ' . get_query_var('order' ) . '<br>'; ?>
         <?php echo 'Custom view fields : ' . get_query_var('fields' ) . '<br>'; ?>
+        <?php echo 'Custom view count posts : ' . get_query_var('posts_per_page' ) . '<br>'; ?>
 
         <?php global $query_string;
         query_posts($query_string . "&order=DESC&orderby=title"); ?>
