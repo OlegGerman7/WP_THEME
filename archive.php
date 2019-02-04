@@ -12,7 +12,6 @@ get_header();
         <?php echo 'Custom view order : ' . get_query_var('order' ) . '<br>'; ?>
         <?php echo 'Custom view fields : ' . get_query_var('fields' ) . '<br>'; ?>
 
-        <?php //query_posts( array ( 'orderby' => 'title', 'order' => 'DESC' ) ); ?>
         <?php global $query_string;
         query_posts($query_string . "&order=DESC&orderby=title"); ?>
 
